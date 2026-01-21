@@ -14,11 +14,9 @@ void dfs()
     return;
   }
   for(int i = 0; i < N; i++){
-   // if(resultArr.empty() || resultArr.back() <= arr[i]){
-      resultArr.push_back(arr[i]);
-      dfs();
-      resultArr.pop_back();
-   // }
+    resultArr.push_back(arr[i]);
+    dfs();
+    resultArr.pop_back();
   }
 }
 int main() 
