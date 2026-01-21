@@ -1,27 +1,19 @@
 #include <iostream>
-#include <vector>
-typedef long long ll;
-typedef long double ld;
 using namespace std;
 
-int main() {
-    ios_base::sync_with_stdio(0);
-    cin.tie(0);
-    cout.tie(0);
-
-    int n, l, w, h;
-    cin >> n >> l >> w >> h;
-
-    ld li = 0;
-    ld ri = l + 1;
-    for (int i = 0; i < 100; i++) {
-        ld mi = (li + ri) / 2;
-        ll tmp = ((ll) (l / mi) * (ll) (w / mi) * (ll) (h / mi));
-        if (tmp < n) ri = mi;
-        else li = mi;
+int main() 
+{
+    int N = 0, L = 0, W = 0, H = 0;
+    long double left = 0, right = 1000000000, mid;
+    cin >> N >> L >> W >> H;
+    
+    for(int i = 0; i < 10000; i++){
+      mid = (left+right) / 2;
+      if((long long)(L / mid) * (long long)(W/mid) * (long long)(H/mid) < N) right = mid;
+      else left = mid;
     }
-
     cout << fixed;
     cout.precision(10);
-    cout << li << '\n';
+    cout << left << '\n';
+    return 0;
 }
