@@ -1,17 +1,19 @@
 #include <iostream>
 #include <vector>
-#include <vector>
 #include <algorithm>
 
 using namespace std;
 
 int main() {
+    ios::sync_with_stdio(0); cin.tie(0);
+    
     string str1 = "", str2 = "", lcs = "";
     int maxLength = 0, endIndex = 0; 
+    
     cin >> str1 >> str2;
-    int str1Size = str1.size();
-    int str2Size = str2.size();
-
+    int str1Size = str1.size(), str2Size = str2.size();
+    int i = str1Size, j = str2Size;
+    
     vector<vector<int>> dp(str1Size + 1, vector<int>(str2Size + 1, 0));
 
     for (int i = 1; i <= str1Size; i++) {
@@ -23,9 +25,6 @@ int main() {
         }
     }
 
-    cout << dp[str1Size][str2Size] << endl;
-
-    int i = str1Size, j = str2Size;
     while (i > 0 && j > 0) {
         if (str1[i - 1] == str2[j - 1]) {
             lcs += str1[i - 1];
@@ -37,7 +36,7 @@ int main() {
         }
     }
     reverse(lcs.begin(), lcs.end());
-    cout << lcs << endl;
+    cout << dp[str1Size][str2Size] << '\n' << lcs << '\n';
 
     return 0;
 }
