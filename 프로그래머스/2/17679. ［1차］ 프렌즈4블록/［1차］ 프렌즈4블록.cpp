@@ -15,8 +15,10 @@ int solution(int m, int n, vector<string> board) {
                 if (board[i][j] == ' ') continue;
                 
                 char target = board[i][j];
-                if (board[i + 1][j] == target && board[i][j + 1] == target && board[i + 1][j + 1] == target) {
-                    is_marked[i][j] = is_marked[i + 1][j] = is_marked[i][j + 1] = is_marked[i + 1][j + 1] = true;
+                if (board[i + 1][j] == target && board[i][j + 1] == target 
+                && board[i + 1][j + 1] == target) {
+                    is_marked[i][j] = is_marked[i + 1][j] = true;
+                    is_marked[i][j + 1] = is_marked[i + 1][j + 1] = true;
                     found = true;
                 }
             }
