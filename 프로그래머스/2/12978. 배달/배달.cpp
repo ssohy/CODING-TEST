@@ -12,8 +12,7 @@ int solution(int N, vector<vector<int> > road, int K) {
     // 최단거리
     vector<int> dist(N + 1, INF);
     
-    
-    for (const auto& r : road) {
+    for (vector<int> r : road) {
         int u = r[0];
         int v = r[1];
         int w = r[2];
