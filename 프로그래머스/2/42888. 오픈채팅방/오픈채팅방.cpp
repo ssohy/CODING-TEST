@@ -4,9 +4,7 @@
 using namespace std;
 
 vector<string> solution(vector<string> record) {
-    vector<string> answer;
-    vector<string> actionArr;
-    vector<string> uidArr;
+    vector<string> answer, actionArr, uidArr;
     unordered_map<string, string> uidMap;
     
     for(int i = 0; i < record.size(); i++){
