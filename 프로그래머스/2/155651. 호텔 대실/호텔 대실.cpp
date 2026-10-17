@@ -46,6 +46,5 @@ int solution(vector<vector<string>> book_time) {
         }
     }
     
-    // 최종적으로 필요한 방의 개수
     return rooms.size();
 }
