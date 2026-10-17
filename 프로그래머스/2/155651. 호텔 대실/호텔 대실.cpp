@@ -4,7 +4,7 @@
 #include <cstdio>
 using namespace std;
 
-// "HH:MM" 문자열을 총 분(int)으로 변환해주는 함수
+// "HH:MM" -> 분(int)으로 변환
 int to_min(string s) {
     return stoi(s.substr(0, 2)) * 60 + stoi(s.substr(3, 2));
 }
@@ -40,7 +40,7 @@ int solution(vector<vector<string>> book_time) {
             }
         }
         
-        // 재사용할 수 있는 방이 없다면 새로운 방을 개설
+        // 재사용할 수 있는 방이 없다면 새로운 방 개설
         if(!assigned){
             rooms.push_back(cur_end);
         }
