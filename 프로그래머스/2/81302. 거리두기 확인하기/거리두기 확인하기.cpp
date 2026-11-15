@@ -36,10 +36,10 @@ bool dfs(vector<string> &place, int y, int x, int count) {
 vector<int> solution(vector<vector<string>> places) {
     vector<int> answer;
     
-    for(int p=0; p<N; ++p) {
+    for(int p = 0; p < N; p++) {
         bool flag = true;
-        for(int i=0; i<N; ++i) {
-            for(int j=0; j<N; ++j) {
+        for(int i = 0; i < N; i++) {
+            for(int j = 0; j < N; j++) {
                 if(places[p][i][j] == 'P') { // 사람 위치에서 탐색 시작
                     memset(visit, 0, sizeof(visit));
                     
